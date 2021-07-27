@@ -12,8 +12,8 @@ In order for this app to work, what I did is make a directory to hold all this f
 
 - Like so:
   /Streams
-  -- /frontend (React code)
-  -- /api (server code)
+  ../frontend (React code)
+  ../api (server code)
 
 - In the /api folder, I initiated npm with default settings (npm init -y), and then installed json-server as only dependency (npm i json-server).
 
@@ -34,9 +34,11 @@ Other step for this app to work: make a directory to hold the RTMP server to rec
 
 - Like so:
   /Streams
-  -- /frontend (React code)
-  -- /api (server code)
-  -- /rtmp-server
+  ../frontend (React code)
+  ../api (server code)
+  ../rtmp-server
+
+- Install the node-media-server package (npm i node-media-server)
 
 - For scripting, I added:
   "scripts": {
@@ -66,7 +68,7 @@ var nms = new NodeMediaServer(config);
 nms.run();
 ```
 
-- Also I had to install OBS app in my Mac to stream a video, and set it up to stream directly to my RTMP server
+- Also I installed OBS app in my Mac to stream a video, and set it up to stream directly to my local RTMP server
 
 <!-- ## Can I see it?
 
