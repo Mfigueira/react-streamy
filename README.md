@@ -6,7 +6,7 @@ This is project I made with CRA to practice React concepts. Its a Twitch-like we
 
 Based on lectures from Stephen Grider's React course.
 
-## Server Code
+## API (CRUD for STREAMS)
 
 In order for this app to work, what I did is make a directory to hold all this frontend code. Aside this directory (inside a top level dir called 'Streams') I created another directory called '/api' to hold a file storage system for the streams data.
 
@@ -27,6 +27,46 @@ In order for this app to work, what I did is make a directory to hold all this f
 {
 "streams": []
 }
+
+## RTMP-SERVER
+
+Other step for this app to work: make a directory to hold the RTMP server to receive and distribute a stream.
+
+- Like so:
+  /Streams
+  -- /frontend (React code)
+  -- /api (server code)
+  -- /rtmp-server
+
+- For scripting, I added:
+  "scripts": {
+  "start": "node index.js"
+  }
+
+- Inside the folder, create an index.js file to hold the RTMP code:
+
+```js
+const NodeMediaServer = require('node-media-server');
+
+const config = {
+  rtmp: {
+    port: 1935,
+    chunk_size: 60000,
+    gop_cache: true,
+    ping: 30,
+    ping_timeout: 60,
+  },
+  http: {
+    port: 8000,
+    allow_origin: '*',
+  },
+};
+
+var nms = new NodeMediaServer(config);
+nms.run();
+```
+
+- Also I had to install OBS app in my Mac to stream a video, and set it up to stream directly to my RTMP server
 
 <!-- ## Can I see it?
 
