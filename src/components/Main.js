@@ -10,10 +10,10 @@ const Main = () => {
     <main>
       <Switch>
         <Route path="/" exact component={StreamList} />
-        <Route path="/stream/new" component={StreamCreate} />
-        <Route path="/stream/show" component={StreamShow} />
-        <Route path="/stream/edit" component={StreamEdit} />
-        <Route path="/stream/delete" component={StreamDelete} />
+        <Route path="/streams/new" component={StreamCreate} />
+        <Route path="/streams/show/:id" component={StreamShow} />
+        <Route path="/streams/edit/:id" component={StreamEdit} />
+        <Route path="/streams/delete/:id" component={StreamDelete} />
         <Route path="*">
           <Redirect to="/" />
         </Route>
