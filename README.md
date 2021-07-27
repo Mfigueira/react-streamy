@@ -15,7 +15,7 @@ In order for this app to work, what I did is make a directory to hold all this f
   -- /frontend (React code)
   -- /api (server code)
 
-- In the /api folder, I initiated npm (npm init) with default settings, and then installed json-server as only dependency (npm i json-server).
+- In the /api folder, I initiated npm with default settings (npm init -y), and then installed json-server as only dependency (npm i json-server).
 
 - For scripting, I added:
   "scripts": {
